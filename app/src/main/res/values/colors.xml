@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Chat Interface Theme Colors -->
+    <color name="background">#F3F4F6</color>
+    <color name="primaryText">#333333</color>
+    <color name="secondaryText">#666666</color>
+    <color name="primaryButton">#2196F3</color>
+    <color name="buttonText">#FFFFFF</color>
+    <color name="hintTextColor">#9CA3AF</color>
+
+    <!-- Button style -->
+    <style name="ChatButtonStyle">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">@color/buttonText</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+    </style>
+
+    <!-- EditText style for Message Input -->
+    <style name="ChatEditTextStyle">
+        <item name="android:background">@drawable/input_background</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textColor">@color/primaryText</item>
+        <item name="android:textColorHint">@color/secondaryText</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Welcome Text Style -->
+    <style name="WelcomeTextStyle">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/primaryText</item>
+    </style>
+
+    <!-- EditText Style -->
+    <style name="EditTextStyle">
+        <item name="android:background">@drawable/rounded_edittext</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/primaryText</item>
+        <item name="android:textColorHint">@color/hintTextColor</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+    <!-- Button Style -->
+    <style name="LoginButtonStyle">
+        <item name="android:background">@drawable/rounded_button</item>
+        <item name="android:textColor">@color/buttonText</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+    <!-- Register Text Style -->
+    <style name="RegisterTextStyle">
+        <item name="android:textColor">@color/primaryText</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="LinkTextStyle">
+        <item name="android:textColor">@color/primaryText</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+
+</resources>
