@@ -8,7 +8,6 @@ import com.google.firebase.database.ValueEventListener;
 
 public class FirebaseHelper {
 
-    // Fetch chatbot credentials from Firebase
     public static void fetchChatbotCredentials(final ChatbotCallback callback) {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("chatbot_credentials");
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -27,7 +26,6 @@ public class FirebaseHelper {
         });
     }
 
-    // Interface for the callback to handle response
     public interface ChatbotCallback {
         void onCredentialsFetched(String apiKey);
         void onError(String error);

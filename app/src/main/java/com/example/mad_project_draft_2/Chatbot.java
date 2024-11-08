@@ -65,15 +65,12 @@ public class Chatbot extends AppCompatActivity {
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-                // Preventing app from closing when back button is pressed
-                // Explicitly return to the previous activity
                 Intent intent = new Intent(Chatbot.this, AppointmentConfirm.class);
                 intent.putExtra("appointmentId", appointmentIdForChatbot);
                 startActivity(intent);
                 finish();
             }
         };
-        // Adding the callback to the activity's OnBackPressedDispatcher
         getOnBackPressedDispatcher().addCallback(this, callback);
 
 

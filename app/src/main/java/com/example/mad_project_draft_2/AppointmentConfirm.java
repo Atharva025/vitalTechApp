@@ -25,14 +25,13 @@ public class AppointmentConfirm extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private TextView textViewNameValue, textViewEmailValue, textViewPhoneNumberValue, textViewAppointmentDetailsValue;
     private Button logOutButton , buttonSpeakWithChatbot;
-    private FirebaseAuth mAuth; // Declare FirebaseAuth variable
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appointment_confirm);
 
-        // Initialize FirebaseAuth
         mAuth = FirebaseAuth.getInstance();
 
         textViewNameValue = findViewById(R.id.textViewNameValue);
@@ -50,14 +49,13 @@ public class AppointmentConfirm extends AppCompatActivity {
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-                // Preventing app from closing when back button is pressed
-                // Explicitly return to the previous activity
+
                 Intent intent = new Intent(AppointmentConfirm.this, Book_Appointment.class);
                 startActivity(intent);
                 finish();
             }
         };
-        // Adding the callback to the activity's OnBackPressedDispatcher
+
         getOnBackPressedDispatcher().addCallback(this, callback);
 
         buttonSpeakWithChatbot.setOnClickListener(new View.OnClickListener() {
@@ -81,32 +79,26 @@ public class AppointmentConfirm extends AppCompatActivity {
             }
         });
 
-        // Initialize Firebase Database reference
         databaseReference = FirebaseDatabase.getInstance().getReference("Appointments");
 
-        // Fetch appointment details
         fetchAppointmentDetails();
     }
 
     private void fetchAppointmentDetails() {
-        // Get the appointment ID passed from the previous activity
         String appointmentId = getIntent().getStringExtra("appointmentId");
         Log.d("AppointmentConfirm", "Received Appointment ID: " + appointmentId);
 
         if (appointmentId != null) {
-            // Fetch appointment data from the database using the appointment ID
             databaseReference.child(appointmentId).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     if (snapshot.exists()) {
-                        // Get the data from the snapshot
                         String name = snapshot.child("userName").getValue(String.class);
                         String email = snapshot.child("userEmail").getValue(String.class);
                         String phoneNumber = snapshot.child("phoneNumber").getValue(String.class);
                         String date = snapshot.child("date").getValue(String.class);
                         String time = snapshot.child("time").getValue(String.class);
 
-                        // Set the values to the UI elements
                         textViewNameValue.setText(name != null ? name : "N/A");
                         textViewEmailValue.setText(email != null ? email : "N/A");
                         textViewPhoneNumberValue.setText(phoneNumber != null ? phoneNumber : "N/A");

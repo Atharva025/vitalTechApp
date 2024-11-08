@@ -76,7 +76,6 @@ public class Register extends AppCompatActivity {
                 return;
             }
 
-            // Check if the email already exists
             checkEmailExists(email);
         });
     }
@@ -88,13 +87,10 @@ public class Register extends AppCompatActivity {
                     public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
                         progressBar.setVisibility(View.GONE);
                         if (task.isSuccessful()) {
-                            // Check if email is already in use
                             SignInMethodQueryResult result = task.getResult();
                             if (result.getSignInMethods().isEmpty()) {
-                                // Email doesn't exist, proceed with registration
                                 registerUser(email);
                             } else {
-                                // Email already exists, show login prompt
                                 Toast.makeText(Register.this, "Email already exists. Please login.", Toast.LENGTH_LONG).show();
                             }
                         } else {

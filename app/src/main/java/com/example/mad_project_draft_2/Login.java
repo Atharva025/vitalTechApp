@@ -44,7 +44,6 @@ public class Login extends AppCompatActivity {
         textViewRegister = findViewById(R.id.textViewRegister);
         progressBar = findViewById(R.id.progressBar);
 
-        // Check if user is already signed in
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             Intent intent = new Intent(getApplicationContext(), Book_Appointment.class);
@@ -68,7 +67,6 @@ public class Login extends AppCompatActivity {
                 String email = editTextEmailLogin.getText().toString().trim();  // Trimmed
                 String password = editTextPasswordLogin.getText().toString().trim();  // Trimmed
 
-                // Debugging logs to check entered values
                 Log.d("Login", "Entered Email: " + email);
                 Log.d("Login", "Entered Password: " + password);
 
@@ -84,14 +82,11 @@ public class Login extends AppCompatActivity {
                     return;
                 }
 
-                // Check for admin credentials
                 if (email.equals("vitalTechAdmin123@gmail.com") && password.equals("vitalTechAdmin123")) {
-                    // Admin login
                     Intent intent = new Intent(getApplicationContext(), Admin.class);
                     startActivity(intent);
                     finish();
                 } else {
-                    // Normal user login via Firebase
                     mAuth.signInWithEmailAndPassword(email, password)
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override

@@ -23,7 +23,7 @@
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- ScrollView containing content below logout button -->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -37,7 +37,6 @@
             android:paddingBottom="16dp"
             android:layout_marginTop="32dp">
 
-            <!-- Admin Title Text -->
             <TextView
                 android:id="@+id/textViewAdminTitle"
                 android:layout_width="wrap_content"
@@ -49,7 +48,6 @@
                 android:textColor="#1F2937"
             android:layout_marginBottom="16dp" />
 
-            <!-- Search EditText -->
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/editTextSearch"
                 android:layout_width="match_parent"
@@ -62,7 +60,6 @@
                 android:paddingEnd="16dp"
                 android:background="@drawable/edittext_background" />
 
-            <!-- RecyclerView for Appointments -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewAppointments"
                 android:layout_width="match_parent"

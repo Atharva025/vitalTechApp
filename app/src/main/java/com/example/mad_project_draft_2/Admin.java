@@ -1,4 +1,3 @@
-// AdminActivity.java
 package com.example.mad_project_draft_2;
 
 import android.content.Intent;
@@ -59,11 +58,10 @@ public class Admin extends AppCompatActivity {
             }
         });
 
-        // Set listener on search EditText to filter appointments as the user types
         searchEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
-                // No need for actions here
+
             }
 
             @Override
@@ -87,7 +85,7 @@ public class Admin extends AppCompatActivity {
                         Appointment appointment = appointmentSnapshot.getValue(Appointment.class);
                         appointmentList.add(appointment);
                     }
-                    // Initially show all appointments
+
                     filteredAppointmentList.addAll(appointmentList);
                     appointmentAdapter.notifyDataSetChanged();
                 }
@@ -103,11 +101,11 @@ public class Admin extends AppCompatActivity {
     private void filterAppointments(String query) {
         filteredAppointmentList.clear();
         if (query.isEmpty()) {
-            filteredAppointmentList.addAll(appointmentList);  // Show all appointments if query is empty
+            filteredAppointmentList.addAll(appointmentList);
         } else {
             for (Appointment appointment : appointmentList) {
                 if (appointment.getUserName().toLowerCase().contains(query.toLowerCase())) {
-                    filteredAppointmentList.add(appointment);  // Add appointment if name matches query
+                    filteredAppointmentList.add(appointment);
                 }
             }
         }

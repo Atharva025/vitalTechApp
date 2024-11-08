@@ -5,7 +5,6 @@
     android:background="#F3F4F6"
     android:padding="24dp">
 
-    <!-- Welcome Text -->
     <TextView
         android:id="@+id/textViewWelcome"
         android:layout_width="wrap_content"
@@ -17,7 +16,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp" />
 
-    <!-- Email Field -->
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
@@ -31,7 +29,6 @@
         android:textColor="#1E3A8A"
         />
 
-    <!-- Password Field -->
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
@@ -53,7 +50,6 @@
         android:layout_marginEnd="411dp"
         android:visibility="gone" />
 
-    <!-- Log In Button -->
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
@@ -65,7 +61,6 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/rounded_button" />
 
-    <!-- Register Redirect Text -->
     <TextView
         android:id="@+id/textViewRegister"
         android:layout_width="wrap_content"

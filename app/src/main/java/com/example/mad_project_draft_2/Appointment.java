@@ -30,7 +30,6 @@ public class Appointment {
         this.time = time;
     }
 
-//    Apply getter and setter for all the variables
 
     public String getUserName() {
         return userName;

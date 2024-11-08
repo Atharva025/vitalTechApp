@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp"
-    android:background="#F9FAFB"> <!-- Light Gray background for the whole layout -->
+    android:background="#F9FAFB">
 
     <Button
         android:id="@+id/buttonLogout"
@@ -156,7 +156,6 @@
         android:layout_marginTop="8dp" />
 </LinearLayout>
 
-    <!-- New Button to Speak with Chatbot -->
 <Button
     android:id="@+id/buttonSpeakWithChatbot"
     android:layout_width="wrap_content"

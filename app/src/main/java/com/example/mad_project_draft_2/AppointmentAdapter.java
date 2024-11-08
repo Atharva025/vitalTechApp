@@ -34,14 +34,12 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Appointment appointment = appointmentList.get(position);
 
-        // Set data on the TextViews
         holder.textViewName.setText("Name: " + appointment.getUserName());
         holder.textViewEmail.setText("Email: " + appointment.getUserEmail());
         holder.textViewPhone.setText("Phone: " + appointment.getPhoneNumber());
         holder.textViewDateAndTime.setText("Date and Time: " + appointment.getDate() + " " + appointment.getTime());
 
 
-        // Handle Confirm button click
         holder.buttonConfirm.setOnClickListener(v -> {
             String message = "Greetings from VitalTech.\nYour appointment has been confirmed!\nName: " + appointment.getUserName() +
                     "\nEmail: " + appointment.getUserEmail() + "\nOn Date: " + appointment.getDate() +
@@ -70,7 +68,6 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            // Ensure IDs match with item_appointment.xml
             textViewName = itemView.findViewById(R.id.textViewName);
             textViewEmail = itemView.findViewById(R.id.textViewEmail);
             textViewPhone = itemView.findViewById(R.id.textViewPhone);
@@ -82,7 +79,7 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
 
     private void sendSmsIntent(String phoneNumber, String message) {
         Intent smsIntent = new Intent(Intent.ACTION_VIEW);
-        smsIntent.setData(Uri.parse("smsto:" + phoneNumber));  // Only SMS apps handle this
+        smsIntent.setData(Uri.parse("smsto:" + phoneNumber));
         smsIntent.putExtra("sms_body", message);
 
         try {
