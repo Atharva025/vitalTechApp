@@ -47,7 +47,7 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
             sendSmsIntent(appointment.getPhoneNumber(), message);
         });
 
-        // Handle Cancel button click
+
         holder.buttonCancel.setOnClickListener(v -> {
             String message = "Greetings, we regret to inform you that your appointment has been cancelled. " +
                     "Please consider booking for another day as our doctors are busy today.";
